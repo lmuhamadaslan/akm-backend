@@ -1,0 +1,165 @@
+GET http://localhost:5000/akmmodul
+
+###
+POST http://localhost:5000/akmmodul
+Content-Type: application/json
+
+{
+    "modul_nama": "AKM-2022 - Modul 2",
+    "modul_aktif": "1"
+}
+
+###
+GET http://localhost:5000/akmtopik
+
+###
+GET http://localhost:5000/akmtopik/modul/627b94829429224dfb986ff0
+
+###
+POST http://localhost:5000/akmtopik
+Content-Type: application/json
+
+{   
+    "topik_modul_id": "62860c7b6b8205edfb655a3b",
+    "topik_nama": "Soal AKM 2022 SD",
+    "topik_detail": "Detail soal AKM 2022 SD",
+    "topik_aktif": "0"
+}
+
+###
+PATCH http://localhost:5000/akmtopik/627e0362e107981c57cd0471
+Content-Type: application/json
+
+{   
+    "topik_nama": "Soal AKM 2022 SMP",
+    "topik_detail": "Detail soal AKM 2022 SMP",
+    "topik_aktif": "1"
+}
+
+###
+GET http://localhost:5000/akmsoal
+
+###
+GET http://localhost:5000/akmsoal/topik/62860c7b6b8205edfb655a3b
+
+###
+POST http://localhost:5000/akmsoal
+Content-Type: application/json
+
+{
+    "soal_topik_id": "62860c7b6b8205edfb655a3b",
+    "soal_detail": "Berapakah 1+1 ?",
+    "soal_tipe": 2,
+    "soal_aktif": 1
+}
+
+###
+PATCH http://localhost:5000/akmsoal/6284cd582678502e8e2f6b61
+Content-Type: application/json
+
+{
+    "soal_topik_id": "6283d4af539cd01536185f83",
+    "soal_detail": "berapa 20 + 20 ?",
+    "soal_tipe": "1",
+    "soal_detail": "Siapakah Penemu Bola Basket?",
+}
+
+###
+DELETE http://localhost:5000/akmsoal/629a05adb4ceca59dc6bed9b
+
+###
+GET http://localhost:5000/akmjawaban
+
+###
+GET http://localhost:5000/akmjawaban/soal/629de946c81c1fef5488e1a0
+
+###
+POST http://localhost:5000/api/auth/login 
+Content-Type: application/json
+
+{
+    "user_name": "Aslan",
+    "user_password": "1234"
+}
+
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "aslan123",
+    "password": "123"
+}
+
+###
+GET http://localhost:5000/akmuser
+
+###
+POST http://localhost:5000/akmuser
+content-type: application/json
+
+{
+    "user_group_id": "62a083d6f14803bc83485cd0",
+    "user_name": "aslan123",
+    "user_password": "123",
+    "user_firstName": "La Ode Muhamad Aslan",
+    "user_nik" : "123456789",
+    "user_keterangan": "Ruangan 1, Sesi 1"
+}
+
+###
+DELETE http://localhost:5000/akmuser/62a2671c39a6739de6b9c93f
+
+###
+GET http://localhost:5000/akmgroup
+
+###
+GET http://localhost:5000/akmgroup/62a07f60f51049edc2f08e4d
+
+###
+POSt http://localhost:5000/akmgroup
+Content-Type: application/json
+
+{
+    "group_nama": "AKM Gelombang 1"
+}
+
+###
+PATCH http://localhost:5000/akmgroup/62a07f60f51049edc2f08e4d
+Content-Type: application/json
+
+{
+    "group_nama": "AKM Gelombang 1"
+}
+
+###
+DELETE http://localhost:5000/akmgroup/62a07f60f51049edc2f08e4d
+
+
+###
+GET http://localhost:5000/akmtes
+
+###
+POST http://localhost:5000/akmtes
+Content-Type: application/json
+
+{
+    "tes_group_id": "62a083d6f14803bc83485cd0",
+    "tes_nama": "Tes 1",
+    "tes_waktu_mulai": "2020-01-01 00:00:00",
+    "tes_waktu_selesai": "2020-01-01 00:00:00",
+    "tes_waktu": 10,
+    "tes_token": "123"
+}
+
+###
+DELETE http://localhost:5000/akmtes/62a5a9810ec4e16b35a2d305
+
+
+###
+POST http://localhost:5000/akmtes/cekpin
+Content-Type: application/json
+
+{
+    "tes_token": "L8GZ2"
+}
