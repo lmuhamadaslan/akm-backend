@@ -1,18 +1,31 @@
 import exporess from "express";
 import {
-  addAkmTesResult,
-  deleteAkmTesResult,
-  getAkmTesResult,
-  getAkmTesResultById,
-  updateAkmTesResult,
+  addAkmJawabanEssay,
+  addAkmJawabanPilgan,
+  deleteAkmJawabanEssay,
+  deleteAkmJawabanPilgan,
+  getAkmJawabanEssay,
+  getAkmJawabanEssayById,
+  getAkmJawabanPilgan,
+  getAkmJawabanPilganById,
+  updateAkmJawabanEssay,
+  updateAkmJawabanPilgan,
 } from "../controllers/AkmTestResultController.js";
 
 const router = exporess.Router();
 
-router.get("/akmresult", getAkmTesResult);
-router.get("/akmresult/:id", getAkmTesResultById);
-router.post("/akmresult", addAkmTesResult);
-router.patch("/akmresult", updateAkmTesResult);
-router.delete("/akmresult/:id", deleteAkmTesResult);
+// bagian AkmJawanPilgan
+router.get("/akmpilgan", getAkmJawabanPilgan);
+router.get("/akmpilgan/:id", getAkmJawabanPilganById);
+router.post("/akmpilgan", addAkmJawabanPilgan);
+router.patch("/akmpilgan", updateAkmJawabanPilgan);
+router.delete("/akmpilgan/:id", deleteAkmJawabanPilgan);
+
+// bagian AkmJawanEssay
+router.get("/akmessay", getAkmJawabanEssay);
+router.get("/akmessay/:id", getAkmJawabanEssayById);
+router.post("/akmessay", addAkmJawabanEssay);
+router.patch("/akmessay", updateAkmJawabanEssay);
+router.delete("/akmessay/:id", deleteAkmJawabanEssay);
 
 export default router;

@@ -15,7 +15,7 @@ import AkmTestRoute from "./routes/AkmTestRoute.js";
 import AkmTestResultRoute from "./routes/AkmTestResultRoute.js";
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = 5000;
 dotenv.config();
 
 // connect to mongodb
